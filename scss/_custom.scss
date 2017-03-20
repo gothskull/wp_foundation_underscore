@@ -1,0 +1,168 @@
+$font_title_header : 'Pinyon Script', cursive;
+$font_title_descripcion : 'Patua One', cursive;
+
+a:visited {
+	color: $primary-color;
+}
+.byline {
+	display: inline
+}
+.separador:after {
+	content: " ";
+	background-image: url("../img/separator.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: block;
+	margin: 0 auto;
+	height: rem-calc(10);
+	width: rem-calc(50);
+}
+
+header{
+	.header_image{
+		height: 378px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.site-branding{
+		padding: rem-calc(120);
+		p.site-description {
+			font-family: $font_title_descripcion;
+			font-size: rem-calc(22);
+			@include breakpoint(medium) {
+				font-size: rem-calc(40);
+			}
+			border-bottom: 1px solid $white;
+			display: inline-block;
+
+		}
+		h1.site-title {
+			font-family: $font_title_header;
+		}
+		a,
+		p{
+			color:$white;
+		}
+	}
+	.main-navigation{
+		& .current_page_item {
+			background-color: darken($primary-color,10);
+		}
+		background-color: $primary-color;
+		>span{
+			padding: rem-calc(10);
+			display: block;
+			text-align: right;
+		}
+		.menu-icon{
+			@include hamburger($white,$white,30px,20px,4px,3)//hamburguer($color,$hover,ancho,alto,grosor,numero de lineas)
+			box-shadow: none;
+		}
+		li{
+			float: none;
+			a{
+				padding: rem-calc(20);
+				color:$white;
+				font-weight: bold;
+				transition: 0.7s ease;
+				
+				&:hover{
+					background-color: darken($primary-color,10);
+				}
+			}
+			
+		}
+	}
+	.no_imagen {
+		background-color: darken($primary-color,10);
+	}
+}
+
+// BLOG
+#content{
+	h1.entry-title , .page-title {
+		@extend .separador;
+		font-size: rem-calc(38);
+		@include breakpoint(medium) {
+			font-size: rem-calc(45);
+		}
+	}
+	.entry-meta {
+		a {
+			color:$black;
+		}
+	}
+	margin-top: rem-calc(30);
+	h2.ultimas_recetas {
+		@extend .separador;
+		margin-bottom: rem-calc(30);
+	}
+	h2.entry-title {
+		font-size: rem-calc(20);
+		a {
+		 	color: $black;
+		 }
+	}
+	.div.entry-content {
+		margin-top: rem-calc(5);
+	}
+	a.button {
+		margin-top: rem-calc(33);
+		display: inline-block;
+		text-transform: uppercase;
+		font-weight: bold;
+		&:visited {
+			color: $white;
+		}
+	}
+}
+
+
+// SIDEBAR
+aside .widget-title {
+	@extend .separador;
+}
+.widget_post {
+	& a {
+		display: flex;
+		align-items: center;
+	}
+	margin-top: 20px;
+	& h3 {
+		font-size: rem-calc(28);
+		@include breakpoint(medium) {
+			font-size: rem-calc(24);
+
+		}
+	}
+}
+
+// FOOTER
+footer#colophon {
+	padding: rem-calc(15);
+	background-color: darken($primary-color,35);
+	.menu-footer-container {
+		a {
+			color: $white;
+		}
+	}
+	#social-menu {
+		li a i{
+			font-size: rem-calc(20);
+			color: $white;
+		}
+	}
+}
+
+// CONTACTO
+#btn_contacto,#newsletter_enviar{
+	@include button-style($primary-color,darken($primary-color,10),$white);
+	padding:$button-padding;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 0;
+	box-shadow:none;
+	font-size: rem-calc(15);
+}
+// NEWSLETTER
